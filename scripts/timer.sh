@@ -6,7 +6,11 @@ source "$CURRENT_DIR/helpers.sh"
 
 main() {
 
-  SECONDS=0
+  if [ -f "$CURRENT_DIR/counter" ]; then
+    SECONDS=$(<$CURRENT_DIR/counter)
+  else
+    SECONDS=0
+  fi
 
   while :
     do
