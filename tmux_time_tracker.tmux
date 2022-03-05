@@ -4,8 +4,8 @@ CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 source "$CURRENT_DIR/scripts/helpers.sh"
 
-tmux_time_tracker="#($CURRENT_DIR/scripts/print_time.sh)"
-tmux_time_tracker_interpolation="\#{tmux_time_tracker}"
+timer="#($CURRENT_DIR/scripts/print_time.sh)"
+timer_interpolation="\#{timer}"
 
 set_tmux_option() {
   local option="$1"
@@ -15,7 +15,7 @@ set_tmux_option() {
 
 do_interpolation() {
   local string=$1
-  local string=${string/$tmux_time_tracker_interpolation/$tmux_time_tracker}
+  local string=${string/$timer/$timer}
   echo "$string"
 }
 
