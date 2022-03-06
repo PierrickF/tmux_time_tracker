@@ -4,7 +4,7 @@ CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 source "$CURRENT_DIR/scripts/helpers.sh"
 
-timer="#($CURRENT_DIR/scripts/timer.sh)"
+timer="#($CURRENT_DIR/scripts/tmux_timer.sh)"
 timer_interpolation="\#{timer}"
 
 set_tmux_option() {
