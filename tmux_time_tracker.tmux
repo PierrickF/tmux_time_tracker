@@ -7,6 +7,10 @@ source "$CURRENT_DIR/scripts/helpers.sh"
 timer="#($CURRENT_DIR/scripts/tmux_timer.sh)"
 timer_interpolation="\#{timer}"
 
+set_reset_binding() {
+  tmux bind-key "R" run-shell "$CURRENT_DIR/scripts/reset.sh"
+}
+
 set_tmux_option() {
   local option="$1"
   local value="$2"
@@ -27,6 +31,7 @@ update_tmux_option() {
 }
 
 main() {
+  set_reset_binding
   update_tmux_option "status-right"
   update_tmux_option "status-left"
 }
