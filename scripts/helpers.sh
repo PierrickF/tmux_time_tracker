@@ -10,24 +10,3 @@ get_tmux_option() {
     echo "$option_value"
   fi
 }
-
-is_osx() {
-  [ "$(uname)" == "Darwin" ]
-}
-
-is_linux() {
-  [ "$(uname)" == "Linux" ]
-}
-
-command_exists() {
-  local command="$1"
-  type "$command" >/dev/null 2>&1
-}
-
-print_current_property() {
-  if is_linux; then
-    spotifycli "$1"
-  else
-    echo "tmux-plugin-spotify works only on Linux"
-  fi
-}
