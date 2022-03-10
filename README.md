@@ -13,7 +13,7 @@ Add the following line to your tmux configuration file:
 
 Add `#{timer}` to either your status-right or status-left area
 in your tmux configuration file:
-`set -g status-right "#{timer}"
+`set -g status-right "#{timer}"`
 
 ## Usage
 
